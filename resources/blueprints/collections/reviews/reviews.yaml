@@ -1,0 +1,66 @@
+title: Reviews
+sections:
+  main:
+    display: Main
+    fields:
+      -
+        handle: title
+        field:
+          type: text
+          required: true
+          validate:
+            - required
+      -
+        handle: content
+        field:
+          type: markdown
+          localizable: true
+      -
+        handle: author
+        field:
+          input_type: text
+          antlers: false
+          display: Author
+          type: text
+          icon: text
+          listable: hidden
+      -
+        handle: revStatus
+        field:
+          options:
+            Active: Active
+            Inactive: Inactive
+          inline: false
+          cast_booleans: true
+          display: 'Review Status'
+          type: radio
+          icon: radio
+          listable: true
+          validate:
+            - required
+      -
+        handle: rating
+        field:
+          options:
+            one_stars: '1 Star'
+            two_stars: '2 Stars'
+            three_stars: '3 Stars'
+            four_stars: '4 Stars'
+            five_stars: '5 Stars'
+          inline: false
+          cast_booleans: false
+          display: Rating
+          type: radio
+          icon: radio
+          listable: true
+  sidebar:
+    display: Sidebar
+    fields:
+      -
+        handle: slug
+        field:
+          type: slug
+          required: true
+          localizable: true
+          validate:
+            - required
